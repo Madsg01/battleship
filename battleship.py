@@ -65,12 +65,13 @@ class Ship:
 
   
 #Settings Variables
-row_size = 5 #number of rows
-col_size = 5  #number of columns
-num_ships = 2
-max_ship_size = 3
+row_size = 9 #Number of rows
+col_size = 9 #Colum Numbers
+num_ships = 3
+max_ship_size = 5
 min_ship_size = 2
 num_turns = 40
+
 
 #Create lists
 ship_list = []
