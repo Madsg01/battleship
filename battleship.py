@@ -75,7 +75,8 @@ num_turns = int(input("Enter number of turns: ")) #Number of turns
 
 
 
-#Create lists
+#Here we Define some lists, the ship , board list and the board display.
+
 ship_list = []
 
 board = [[0] * col_size for x in range(row_size)]
@@ -146,7 +147,7 @@ def get_col():
     except ValueError:
       print("\nPlease enter a number")
 
-# Create the ships
+# Here the ships are created and the info provided from the player is appended to it.
 
 temp = 0
 while temp < num_ships:
@@ -200,6 +201,6 @@ for turn in range(num_turns):
 
 # End Game
 if ship_list:
-  print("You lose!")
+  print("You have run out of ammo, you lose!")
 else:
-  print("All the ships are sunk. You win!")
+  print("Congrats you win!")
