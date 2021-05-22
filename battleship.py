@@ -63,14 +63,16 @@ class Ship:
         raise RuntimeError("Board display inaccurate")
     return True
 
-  
-#Settings Variables
-row_size = 9 #Number of rows
-col_size = 9 #Colum Numbers
-num_ships = 3
-max_ship_size = 5
-min_ship_size = 2
-num_turns = 40
+
+# Settings Variables for the game, at the start it asks the user to define the board size, ship numbers etc.
+
+row_size = int(input("Enter Number of Rows: ")) #Row ize
+col_size = int(input("Enter number of colums: ")) #Colum Size
+num_ships = int(input("Enter ship count: ")) #Number of ships
+max_ship_size = int(input("Enter max ship size: ")) #Max Ship Size 
+min_ship_size = int(input("Enter min ship size: ")) #Min ship Size
+num_turns = int(input("Enter number of turns: ")) #Number of turns
+
 
 
 #Create lists
