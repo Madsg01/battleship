@@ -1,7 +1,29 @@
 from random import randint
 import os
 
+
+
+# Settings Variables for the game, at the start it asks the user to define the board size, ship numbers etc.
+
+row_size = int(input("Enter Number of Rows: ")) #Row ize
+col_size = int(input("Enter number of colums: ")) #Colum Size
+num_ships = int(input("Enter ship count: ")) #Number of ships
+max_ship_size = int(input("Enter max ship size: ")) #Max Ship Size 
+min_ship_size = int(input("Enter min ship size: ")) #Min ship Size
+num_turns = int(input("Enter number of turns: ")) #Number of turns
+
+
+
+#Here we Define some lists, the ship , board list and the board display.
+
+ship_list = []
+
+board = [[0] * col_size for x in range(row_size)]
+
+board_display = [["O"] * col_size for x in range(row_size)]
+
 #Ship Class
+
 class Ship:
   def __init__(self, size, orientation, location):
     self.size = size
@@ -64,24 +86,7 @@ class Ship:
     return True
 
 
-# Settings Variables for the game, at the start it asks the user to define the board size, ship numbers etc.
 
-row_size = int(input("Enter Number of Rows: ")) #Row ize
-col_size = int(input("Enter number of colums: ")) #Colum Size
-num_ships = int(input("Enter ship count: ")) #Number of ships
-max_ship_size = int(input("Enter max ship size: ")) #Max Ship Size 
-min_ship_size = int(input("Enter min ship size: ")) #Min ship Size
-num_turns = int(input("Enter number of turns: ")) #Number of turns
-
-
-
-#Here we Define some lists, the ship , board list and the board display.
-
-ship_list = []
-
-board = [[0] * col_size for x in range(row_size)]
-
-board_display = [["O"] * col_size for x in range(row_size)]
 
 #Functions
 def print_board(board_array):
@@ -125,6 +130,7 @@ def random_location():
     return {'location': locations[randint(0, len(locations) - 1)], 'size': size,\
      'orientation': orientation}
 
+#This is the part that gets the rows 
 def get_row():
   while True:
     try:
