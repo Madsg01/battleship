@@ -8,7 +8,7 @@ import os
 row_size = int(input("Enter Number of Rows: ")) #Row ize
 col_size = int(input("Enter number of colums: ")) #Colum Size
 num_ships = int(input("Enter ship count: ")) #Number of ships
-max_ship_size = int(input("Enter max ship size: ")) #Max Ship Size 
+max_ship_size = int(input("Enter max ship size (Cannot be larger then the board): ")) #Max Ship Size 
 min_ship_size = int(input("Enter min ship size: ")) #Min ship Size
 num_turns = int(input("Enter number of turns: ")) #Number of turns
 
@@ -20,7 +20,7 @@ ship_list = []
 
 board = [[0] * col_size for x in range(row_size)]
 
-board_display = [["O"] * col_size for x in range(row_size)]
+board_display = [["."] * col_size for x in range(row_size)]
 
 #Ship Class
 
@@ -79,7 +79,7 @@ class Ship:
   
   def destroyed(self):
     for coords in self.coordinates:
-      if board_display[coords['row']][coords['col']] == 'O':
+      if board_display[coords['row']][coords['col']] == '.':
         return False
       elif board_display[coords['row']][coords['col']] == '*':
         raise RuntimeError("Board display inaccurate")
